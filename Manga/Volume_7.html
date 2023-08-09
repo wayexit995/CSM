@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manga Chapters</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style1.css">
+	<style>
+		body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				background-image: url('./img/volume7.jpg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-size: cover;
+				background-position: center;
+			}
+		nav ul {
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  display: block;
+  padding: 20%;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="./Index.html">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section>
+			<h2 style="color: white;">Chainsaw Man</h2>
+			<div class="chapter-list">
+				<ul id="chapter-list">
+					
+					<!-- Add more volumes as necessary -->
+				</ul>
+			</div>
+		</section>
+	</main>
+	
+	<footer>
+		<p>&copy; Manga Volumes 2023</p>
+	</footer>
+	<script>
+// Define the number of chapters
+const numChapters = 61;
+
+// Loop through each chapter and add it to the list
+for (let i = 53; i <= numChapters; i++) {
+  const chapter = document.createElement('li');
+  const link = document.createElement('a');
+  const image = document.createElement('img');
+  const title = document.createElement('p');
+  
+  image.src = `./c/chapter_${i.toString().padStart(1, '0')}/001.jpg`;
+  image.alt = `Chapter ${i}`;
+  title.textContent = `Chapter ${i}`;
+  
+  link.href = `./ch_${i}.html`;
+  link.appendChild(image);
+  link.appendChild(title);
+  
+  chapter.appendChild(link);
+  
+  document.getElementById('chapter-list').appendChild(chapter);
+}
+
+</script>
+	<script src="script.js">
+	
+	</script>
+</body>
+</html>
