@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="56px" viewBox="0 0 1440 56" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Waves/wave-bottom-haze</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1440,56 L0,56 L0,35.4091149 C95.7633114,35 278.134957,56 578.778314,56 C879.421672,56 1135.89541,30.5243052 1440,31.6164191 L1440,56 Z" id="path-1"></path>
+    </defs>
+    <g id="Waves/wave-bottom-haze" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M1440,18.6164191 L1440,56 L0,56 L0,19.4091149 C115.88527,18.914036 229.081162,52 655.578314,52 C1082.07547,52 1250.37725,17.9354374 1440,18.6164191 Z" id="wave" fill="#FFFFFF" opacity="0.5"></path>
+        <path d="M1440,0.616419131 L1440,56 L0,56 L0,6.40911495 C106.226448,5.95529994 313.375622,56 623.178314,56 C932.981007,56 1268.35502,-9.23705556e-14 1440,0.616419131 Z" id="wave" fill="#FFFFFF" opacity="0.25"></path>
+        <g id="base" fill-rule="nonzero">
+            <use fill="#F5F5FC" xlink:href="#path-1"></use>
+            <use fill="#F8F8FF" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

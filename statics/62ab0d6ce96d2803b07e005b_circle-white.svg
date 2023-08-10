@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="350px" viewBox="0 0 350 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>circle-white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-92.000000, -3895.000000)" fill="#FFFFFF" id="circle-white">
+            <path d="M267,4245 C363.649831,4245 442,4166.64983 442,4070 C442,3973.35017 363.649831,3895 267,3895 C170.350169,3895 92,3973.35017 92,4070 C92,4166.64983 170.350169,4245 267,4245 Z M267,4197 C196.835773,4197 140,4140.11593 140,4070 C140,3999.88407 196.835773,3943 267,3943 C337.164227,3943 394,3999.88407 394,4070 C394,4140.11593 337.164227,4197 267,4197 Z"></path>
+        </g>
+    </g>
+</svg>
