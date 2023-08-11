@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-image: url('./C/Chapter_11/001.jpg');
+  background-image: url('./C/Chapter_11/none.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   background-size: cover;
@@ -38,7 +38,7 @@
   <body>
     <header>
 	<h1><a href="Volume_2.html" style=" color: white;">Go Back</a>
-      <h1>Chapter_11_Colored</h1>
+      <h1>Chapter_11_Colored</h1><h1><a id="nextLink" href="#" style="color: white;">Next</a></h1>
     </header>
     <main>
 <div id="imageContainer"></div>
@@ -72,6 +72,6 @@ images.forEach(img => {
     img.parentNode.removeChild(img);
   });
 });
-	</script>
+	</script><script> var pageTitle = document.title;  var currentChapterNumber = parseInt(pageTitle.split("_")[1]);   var nextChapterNumber = currentChapterNumber + 1;   var nextLink = document.getElementById("nextLink");  nextLink.href = "ch_" + nextChapterNumber + ".html";    nextLink.textContent = "Next";  </script>
   </body>
 </html>
