@@ -38,7 +38,8 @@
   <body>
     <header>
 	<h1><a href="Volume_1.html" style=" color: white;">Go Back</a>
-      <h1>Chapter_2_Colored</h1><h1><a id="nextLink" href="#" style="color: white;">Next</a></h1>    </header>
+      <h1>Chapter_2_Colored</h1> <h1><a id="nextLink" href="#" style="color: white;">Next</a></h1>
+    </header>
     <main>
 <div id="imageContainer"></div>
 		<!-- Add the manga pages here -->
@@ -71,7 +72,7 @@ images.forEach(img => {
     img.parentNode.removeChild(img);
   });
 });
-	</script><script> var pageTitle = document.title;  var currentChapterNumber = parseInt(pageTitle.split("_")[1]);   var nextChapterNumber = currentChapterNumber + 1;   var nextLink = document.getElementById("nextLink");  nextLink.href = "ch_" + nextChapterNumber + ".html";    nextLink.textContent = "Next";  </script>
+	</script>
 	<script>
     // ... (your existing JavaScript code)
 
@@ -86,7 +87,7 @@ images.forEach(img => {
     var nextLink = document.getElementById("nextLink");
     nextLink.href = "ch_" + nextChapterNumber + ".html"; // Updated URL
     nextLink.textContent = "Next"; // Update the link text
-</script><script> var pageTitle = document.title;  var currentChapterNumber = parseInt(pageTitle.split("_")[1]);   var nextChapterNumber = currentChapterNumber + 1;   var nextLink = document.getElementById("nextLink");  nextLink.href = "ch_" + nextChapterNumber + ".html";    nextLink.textContent = "Next";  </script>
+</script>
 
   </body>
 </html>
