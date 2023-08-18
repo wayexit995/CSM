@@ -10,8 +10,8 @@
 				margin: 0;
 				padding: 0;
 				font-family: Arial, sans-serif;
-				background-image: url('./img/volume9.jpg');
-				background-repeat: no-repeat;
+				background-image: url('. volume9.jpg');
+				background-repeat: no-repeat; background-color: #9A8884;
 				background-size: contain;
 				background-size: cover;
 				background-position: center;
@@ -66,7 +66,7 @@ for (let i = 71; i <= numChapters; i++) {
   const image = document.createElement('img');
   const title = document.createElement('p');
   
-  image.src = `./C/Chapter_${i.toString().padStart(1, '0')}/001.jpg`;
+  image.src = `./c/chapter_${i.toString().padStart(1, '0')}/001.jpg`;
   image.alt = `Chapter ${i}`;
   title.textContent = `Chapter ${i}`;
   
