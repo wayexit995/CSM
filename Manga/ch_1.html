@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Chapter_1</title>
-	<style>
+	<link rel="stylesheet" href="style3.css"> <style>
   body {
   margin: 0;
   padding: 0;
@@ -32,6 +32,15 @@
 	justify-content: space-between;
 	align-items: center;
   }
+  
+  header {
+  background-color: rgba(51, 51, 51, 0.8);
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
 </style>
 
   </head>
@@ -39,12 +48,12 @@
     <header>
 	<h1><a href="Volume_1.html" style=" color: white;">Go Back</a>
       <h1>Chapter_1_Colored</h1>
-	  <h1><a id="nextLink" href="#" style="color: white;">Next</a></h1>
-    </header>
+	  <h1><a class="next-link" href="#" style="color: white;">Next</a></h1> </header>
     <main>
 <div id="imageContainer"></div>
 		<!-- Add the manga pages here -->
-    </main>
+    </main> <header> <h1><a href="Volume_1.html" style=" color: white;">Go Back</a><h1>Chapter_0_Colored</h1> <h1><a class="next-link" href="#" style="color: white;">Next</a></h1> </header> 
+	
 	<script>
 	// Define function to pad numbers with zeros
     function pad(num, size) {
@@ -74,21 +83,7 @@ images.forEach(img => {
   });
 });
 	</script>
-	<script>
-    // ... (your existing JavaScript code)
-
-    // Get the current chapter number from the page title
-    var pageTitle = document.title; // This should be "Chapter_1_Colored"
-    var currentChapterNumber = parseInt(pageTitle.split("_")[1]);
-
-    // Calculate the next chapter number
-    var nextChapterNumber = currentChapterNumber + 1;
-
-    // Update the "Next" link's href attribute
-    var nextLink = document.getElementById("nextLink");
-    nextLink.href = "ch_" + nextChapterNumber + ".html"; // Updated URL
-    nextLink.textContent = "Next"; // Update the link text
-</script>
+	<script>[...document.getElementsByClassName("next-link")].forEach((nextLink, i) => {var pageTitle = document.title;var currentChapterNumber = parseInt(pageTitle.split("_")[1]);var nextChapterNumber = currentChapterNumber + 1;nextLink.href = "ch_" + nextChapterNumber + ".html";nextLink.textContent = "Next";});</script>
 
 
 
