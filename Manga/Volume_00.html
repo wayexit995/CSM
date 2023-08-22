@@ -100,6 +100,7 @@ for (let i = 1; i <= numChapters; i++) {
   
   image.src = `./C/Chapter_${i.toString().padStart(1, '0')}/001.jpg`;
   image.alt = `Chapter ${i}`;
+  image.loading = 'lazy'; // Add lazy loading attribute
   title.textContent = `Chapter ${i}`;
   
   link.href = `./ch_${i}.html`;
@@ -110,7 +111,6 @@ for (let i = 1; i <= numChapters; i++) {
   
   document.getElementById('chapter-list').appendChild(chapter);
 }
-
 </script>
 	<script src="script.js">
 	
@@ -130,23 +130,7 @@ for (let i = 1; i <= numChapters; i++) {
     <div class="section haze no-padding wf-section"></div>
 
 
-    <div class="section footer-section wf-section">
-      <div class="wrapper">
-        <div class="footer">
-          
-          <div class="footer-bottom">
-            <div class="footer-v2-bottom-menu">
-              <a href="https://wayexit995.github.io/CSM/Manga/Index.html" class="footer-v2-bottom-menu-link">Home</a>
-              
-            </div>
-            <div class="footer-v2-bottom-info">
-              <div>Source <a href="https://github.com/wayexit995/CSM" target="_blank" class="link-grey">GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
   
   <script src="script.js"></script>
