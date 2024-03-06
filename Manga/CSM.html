@@ -92,6 +92,18 @@ h2 {
   #prevBtn:hover, #nextBtn:hover {
     background-color: rgba(248, 114, 120, 1);
 }
+	    #goUpBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #fa8532;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
     </style>
 </head>
 <body>
@@ -117,10 +129,31 @@ h2 {
 	<div id="imageContainer">
 	</div>
 	
-        
+        <button id="goUpBtn" onclick="goUp()">Go Up</button>
     </section>
 </main>
+<script>
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("goUpBtn").style.display = "block";
+  } else {
+    document.getElementById("goUpBtn").style.display = "none";
+  }
+}
+
+function goUp() {
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
+  scrollToTop();
+}
+</script>
 <script>
         var imageContainer = document.getElementById('imageContainer');
         var folderSelect = document.getElementById('folderSelect');
