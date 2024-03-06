@@ -265,7 +265,7 @@ h2 {
             var totalImages = folderImages[selectedFolder];
             loadImagesFromFolder(folderPath, totalImages);
 
-            history.pushState(null, '', '?CSM=' + selectedFolder);
+            history.pushState(null, '', '?REZE=' + selectedFolder);
 
             localStorage.setItem('selectedFolder', selectedFolder);
         });
@@ -278,7 +278,7 @@ h2 {
             var folderPath = "./" + selectedFolder;
             var totalImages = folderImages[selectedFolder];
             loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?CSM=' + selectedFolder);
+            history.pushState(null, '', '?REZE=' + selectedFolder);
             localStorage.setItem('selectedFolder', selectedFolder);
         });
 
@@ -290,7 +290,7 @@ h2 {
             var folderPath = "./" + selectedFolder;
             var totalImages = folderImages[selectedFolder];
             loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?CSM=' + selectedFolder);
+            history.pushState(null, '', '?REZE=' + selectedFolder);
             localStorage.setItem('selectedFolder', selectedFolder);
         });
 
