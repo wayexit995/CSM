@@ -20,8 +20,7 @@
 
 
 > https://github.com/wayexit995/CSM/blob/main/Manga/CSM.html 
-> var folderImages = {
-        "Chapter_1": 57,
+>                               "Chapter_1": 57,
 				"Chapter_2": 26,
 				"Chapter_3": 24,
 				"Chapter_4": 20,
@@ -118,6 +117,3 @@
 				"Chapter_95": 19,
 				"Chapter_96": 18,
 				"Chapter_97": 27,
-            
-            // Add more entries as needed
-        };
