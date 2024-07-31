@@ -50,7 +50,7 @@ select {
     display: block;
     margin: 0 auto;
 	color: #fff;
-	background-color: rgb(255 123 59);
+	background-color: rgb(255 123 59 / 0%);
 }
 
 select option {
@@ -75,7 +75,7 @@ h2 {
 }
 
 #prevBtn, #nextBtn {
-    background-color: rgba(248, 114, 49, 1);
+    background-color: rgba(248 114 49 / 0%);
     border: none;
     color: white;
     padding: 15px 32px;
@@ -128,26 +128,28 @@ h2 {
 	<br/>
 	<div id="imageContainer">
 	</div>
-	
-        
+	</br>
+	<a style="cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+    font-size: larger;
+    display: block;" id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</a>
+        </br>
+		</br>
+		<a style="cursor: pointer;
+    text-align: center;
+    text-decoration: underline;
+    font-size: larger;
+    display: block; color: #fff;" href="./Index.html">@CSM MAIN PAGE</a>
+	</br>
     </section>
 </main>
 <script>
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("goUpBtn").style.display = "block";
-  } else {
-    document.getElementById("goUpBtn").style.display = "none";
-  }
-}
-
-function goUp() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-</script>
+        // Function to scroll to the top of the page instantly
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+    </script>
 <script>
         var imageContainer = document.getElementById('imageContainer');
         var folderSelect = document.getElementById('folderSelect');
