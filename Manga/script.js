@@ -1,8 +1,5 @@
 const volumeLinks = document.querySelectorAll('.volume-list a');
 
-volumeLinks.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault(); // Correct usage
-    // Additional functionality here
-  });
-});
+volumeLinks.forEach(function(link) {
+	link.addEventListener('click', function(event) {
+		event.preventDefault 
