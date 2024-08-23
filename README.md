@@ -9,3 +9,5 @@
 
 
 ![Reze_Denji](https://raw.githubusercontent.com/wayexit995/CSM/main/Manga/img/370852667_122098044134026433_3259430490755712967_n.jpg)
+
+![Reze_Denji](https://raw.githubusercontent.com/wayexit995/CSM/main/Manga/2.html?image.jpg)
