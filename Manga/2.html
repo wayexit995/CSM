@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Chapter Image URL</title>
+</head>
+<body>
+
+    <div id="imageContainer"></div>
+
+    <script>
+        // Define the number of images per chapter (compact format)
+        var imagesPerChapter = {1: 57, 2: 26, 3: 24, 4: 20, 5: 20, 6: 20, 7: 26, 8: 24, 9: 20, 10: 20, 11: 20, 12: 19, 13: 19, 
+            14: 19, 15: 22, 16: 29, 17: 25, 18: 20, 19: 19, 20: 19, 21: 20, 22: 20, 23: 20, 24: 19, 25: 30, 26: 26, 27: 19, 
+            28: 20, 29: 22, 30: 20, 31: 20, 32: 19, 33: 22, 34: 26, 35: 26, 36: 19, 37: 17, 38: 26, 39: 20, 40: 20, 41: 20, 
+            42: 20, 43: 33, 44: 24, 45: 20, 46: 22, 47: 20, 48: 20, 49: 21, 50: 18, 51: 20, 52: 27, 53: 28, 54: 20, 55: 20, 
+            56: 20, 57: 20, 58: 19, 59: 23, 60: 22, 61: 31, 62: 26, 63: 19, 64: 19, 65: 19, 66: 20, 67: 20, 68: 19, 69: 18, 
+            70: 28, 71: 28, 72: 20, 73: 22, 74: 20, 75: 16, 76: 16, 77: 19, 78: 17, 79: 25, 80: 26, 81: 18, 82: 19, 83: 17, 
+            84: 19, 85: 23, 86: 19, 87: 17, 88: 25, 89: 25, 90: 21, 91: 21, 92: 19, 93: 18, 94: 20, 95: 19, 96: 18, 97: 27};
+
+        // Function to get a random key (chapter) from the imagesPerChapter object
+        function getRandomChapter() {
+            var keys = Object.keys(imagesPerChapter);
+            return keys[Math.floor(Math.random() * keys.length)];
+        }
+
+        // Get a random chapter
+        var randomChapter = getRandomChapter();
+        var numImages = imagesPerChapter[randomChapter];
+
+        // Get a random image number from the selected chapter
+        var randomImageNumber = Math.floor(Math.random() * numImages) + 1;
+        var imageNumber = String(randomImageNumber).padStart(3, '0');
+
+        // Generate the image path for the random chapter and image
+        var imagePath = "./C/Chapter_" + randomChapter + "/" + imageNumber + ".jpg";
+
+        // Redirect the browser to the image URL
+        window.location.href = imagePath;
+    </script>
+
+</body>
+</html>
