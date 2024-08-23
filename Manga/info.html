@@ -1,32 +1,72 @@
 <html><head>
-		<title></title>
+		<title>Chainsaw Man</title>
+		<link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/105863400">
 		<style>
 		.s1 h1 {
 		font-family: monospace;
+		}
+		
+		img {
+		width: 80%;
 		}
 		</style>
 	</head>
 	<body style="
     background-color: #dcd8d7;
 ">
+
 	<div style="
     margin-left: auto;
     /* margin-right: auto; */
     /* text-align: center; */
     /* padding-top: 10%; */
 ">
-	<main style="
+	
+<div id="imageContainer" style="
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding-top: 10%;
-">
-	<img src="./C/Chapter_1/001.jpg" style="
-    /* text-align: center; */
-    /* size: a4; */
-    width: 80%;
-">
-	</main>
+"></div>
+<script>
+        // Define the number of images per chapter (compact format)
+        var imagesPerChapter = {1: 57, 2: 26, 3: 24, 4: 20, 5: 20, 6: 20, 7: 26, 8: 24, 9: 20, 10: 20, 11: 20, 12: 19, 13: 19, 
+            14: 19, 15: 22, 16: 29, 17: 25, 18: 20, 19: 19, 20: 19, 21: 20, 22: 20, 23: 20, 24: 19, 25: 30, 26: 26, 27: 19, 
+            28: 20, 29: 22, 30: 20, 31: 20, 32: 19, 33: 22, 34: 26, 35: 26, 36: 19, 37: 17, 38: 26, 39: 20, 40: 20, 41: 20, 
+            42: 20, 43: 33, 44: 24, 45: 20, 46: 22, 47: 20, 48: 20, 49: 21, 50: 18, 51: 20, 52: 27, 53: 28, 54: 20, 55: 20, 
+            56: 20, 57: 20, 58: 19, 59: 23, 60: 22, 61: 31, 62: 26, 63: 19, 64: 19, 65: 19, 66: 20, 67: 20, 68: 19, 69: 18, 
+            70: 28, 71: 28, 72: 20, 73: 22, 74: 20, 75: 16, 76: 16, 77: 19, 78: 17, 79: 25, 80: 26, 81: 18, 82: 19, 83: 17, 
+            84: 19, 85: 23, 86: 19, 87: 17, 88: 25, 89: 25, 90: 21, 91: 21, 92: 19, 93: 18, 94: 20, 95: 19, 96: 18, 97: 27};
+
+        // Select the container where the image will be added
+        var container = document.getElementById("imageContainer");
+
+        // Function to get a random key (chapter) from the imagesPerChapter object
+        function getRandomChapter() {
+            var keys = Object.keys(imagesPerChapter);
+            return keys[Math.floor(Math.random() * keys.length)];
+        }
+
+        // Get a random chapter
+        var randomChapter = getRandomChapter();
+        var numImages = imagesPerChapter[randomChapter];
+
+        // Get a random image number from the selected chapter
+        var randomImageNumber = Math.floor(Math.random() * numImages) + 1;
+        var imageNumber = String(randomImageNumber).padStart(3, '0');
+
+        // Generate the image path for the random chapter and image
+        var imagePath = "./C/Chapter_" + randomChapter + "/" + imageNumber + ".jpg";
+
+        // Create a new img element
+        var img = document.createElement("img");
+        img.src = imagePath;
+        img.alt = "Chapter " + randomChapter + " Image " + imageNumber;
+
+        // Append the img element to the container
+        container.appendChild(img);
+    </script>
+
 
 	<div style="
     padding-left: 10%;
