@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient( 90deg, #6b3434, #6b3434);
+            background: linear-gradient( 90deg, #f13030, #ffb833);
         }
         main {
 			max-width: 100%;
@@ -31,7 +31,7 @@
 @media (prefers-color-scheme: dark) {
 
     main {
-            background: linear-gradient( 90deg, #6b3434, #6b3434);
+            background: linear-gradient( 90deg, #f13030, #ffb833);
         }
 }
 
@@ -105,6 +105,37 @@ h2 {
     cursor: pointer;
   }
   
+  #prevBtnd, #nextBtnd {
+    background-color: rgba(248 114 49 / 0%);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 5px;
+	border: 6px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  #prevBtnd:hover, #nextBtnd:hover {
+    background-color: rgba(248, 114, 120, 1);
+}
+	    #goUpBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #fa8532;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
 .c-eStXTg {
                     position: fixed;
                     top: 0;
@@ -142,6 +173,21 @@ h2 {
 	<div id="imageContainer">
 	</div>
 	</br>
+	
+	<div>
+		<select id="folderSelectd" style="
+    display: none;
+">
+		</select>
+		<br/>
+		<div>
+			<p>
+				<button id="prevBtnd">Previous</button>
+				<button id="nextBtnd">Next</button>
+			</p>
+		</div>
+	</div>
+	</br>
 	<a style="cursor: pointer;
     text-align: center;
     text-decoration: underline;
@@ -163,6 +209,192 @@ h2 {
             window.scrollTo({ top: 0, behavior: 'auto' });
         }
     </script>
+	<script>
+	var imageContainer = document.getElementById('imageContainer');
+        var folderSelectd = document.getElementById('folderSelectd');
+        var prevBtnd = document.getElementById('prevBtnd');
+        var nextBtnd = document.getElementById('nextBtnd');
+
+        var folderImages = {
+                "Chapter_1": 57,
+				"Chapter_2": 26,
+				"Chapter_3": 24,
+				"Chapter_4": 20,
+				"Chapter_5": 20,
+				"Chapter_6": 20,
+				"Chapter_7": 26,
+				"Chapter_8": 24,
+				"Chapter_9": 20,
+				"Chapter_10": 20,
+				"Chapter_11": 20,
+				"Chapter_12": 19,
+				"Chapter_13": 19,
+				"Chapter_14": 19,
+				"Chapter_15": 22,
+				"Chapter_16": 29,
+				"Chapter_17": 25,
+				"Chapter_18": 20,
+				"Chapter_19": 19,
+				"Chapter_20": 19,
+				"Chapter_21": 20,
+				"Chapter_22": 20,
+				"Chapter_23": 20,
+				"Chapter_24": 19,
+				"Chapter_25": 30,
+				"Chapter_26": 26,
+				"Chapter_27": 19,
+				"Chapter_28": 20,
+				"Chapter_29": 22,
+				"Chapter_30": 20,
+				"Chapter_31": 20,
+				"Chapter_32": 19,
+				"Chapter_33": 22,
+				"Chapter_34": 26,
+				"Chapter_35": 26,
+				"Chapter_36": 19,
+				"Chapter_37": 17,
+				"Chapter_38": 26,
+				"Chapter_39": 20,
+				"Chapter_40": 20,
+				"Chapter_41": 20,
+				"Chapter_42": 20,
+				"Chapter_43": 33,
+				"Chapter_44": 24,
+				"Chapter_45": 20,
+				"Chapter_46": 22,
+				"Chapter_47": 20,
+				"Chapter_48": 20,
+				"Chapter_49": 21,
+				"Chapter_50": 18,
+				"Chapter_51": 20,
+				"Chapter_52": 27,
+				"Chapter_53": 28,
+				"Chapter_54": 20,
+				"Chapter_55": 20,
+				"Chapter_56": 20,
+				"Chapter_57": 20,
+				"Chapter_58": 19,
+				"Chapter_59": 23,
+				"Chapter_60": 22,
+				"Chapter_61": 31,
+				"Chapter_62": 26,
+				"Chapter_63": 19,
+				"Chapter_64": 19,
+				"Chapter_65": 19,
+				"Chapter_66": 20,
+				"Chapter_67": 20,
+				"Chapter_68": 19,
+				"Chapter_69": 18,
+				"Chapter_70": 28,
+				"Chapter_71": 28,
+				"Chapter_72": 20,
+				"Chapter_73": 22,
+				"Chapter_74": 20,
+				"Chapter_75": 16,
+				"Chapter_76": 16,
+				"Chapter_77": 19,
+				"Chapter_78": 17,
+				"Chapter_79": 25,
+				"Chapter_80": 26,
+				"Chapter_81": 18,
+				"Chapter_82": 19,
+				"Chapter_83": 17,
+				"Chapter_84": 19,
+				"Chapter_85": 23,
+				"Chapter_86": 19,
+				"Chapter_87": 17,
+				"Chapter_88": 25,
+				"Chapter_89": 25,
+				"Chapter_90": 21,
+				"Chapter_91": 21,
+				"Chapter_92": 19,
+				"Chapter_93": 18,
+				"Chapter_94": 20,
+				"Chapter_95": 19,
+				"Chapter_96": 18,
+				"Chapter_97": 27,
+            
+            // Add more entries as needed
+        };
+
+        // Dynamically populate the dropdown with options
+        for (var folder in folderImages) {
+            if (folderImages.hasOwnProperty(folder)) {
+                var option = document.createElement('option');
+                option.value = folder;
+                option.text = "Chapter " + folder.slice(8);
+                folderSelectd.appendChild(option);
+            }
+        }
+
+        function loadImagesFromFolder(folderPath, totalImages) {
+    imageContainer.innerHTML = '';
+
+    for (var i = 1; i <= totalImages; i++) {
+        var imgDiv = document.createElement('div');
+        imgDiv.classList.add('image-container');
+        var img = document.createElement('img');
+        var paddedNumber = ("000" + i).slice(-3); // Pad the number with leading zeros
+        img.src = "C/" + folderPath + "/" + paddedNumber + ".jpg"; // Use paddedNumber
+        img.alt = "Image " + paddedNumber; // Use paddedNumber
+        imgDiv.appendChild(img);
+        imageContainer.appendChild(imgDiv);
+
+        var br = document.createElement('br');
+        imageContainer.appendChild(br);
+    }
+}
+
+
+
+        folderSelectd.addEventListener('change', function () {
+            var selectedFolder = this.value;
+            var folderPath = "./" + selectedFolder;
+            var totalImages = folderImages[selectedFolder];
+            loadImagesFromFolder(folderPath, totalImages);
+
+            history.pushState(null, '', '?REZE=' + selectedFolder);
+
+            localStorage.setItem('selectedFolder', selectedFolder);
+        });
+
+        prevBtnd.addEventListener('click', function () {
+            var currentIndex = Array.from(folderSelectd.options).findIndex(option => option.value === folderSelectd.value);
+            var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+            folderSelectd.value = folderSelectd.options[prevIndex].value;
+            var selectedFolder = folderSelectd.value;
+            var folderPath = "./" + selectedFolder;
+            var totalImages = folderImages[selectedFolder];
+            loadImagesFromFolder(folderPath, totalImages);
+            history.pushState(null, '', '?REZE=' + selectedFolder);
+            localStorage.setItem('selectedFolder', selectedFolder);
+        });
+
+        nextBtnd.addEventListener('click', function () {
+            var currentIndex = Array.from(folderSelectd.options).findIndex(option => option.value === folderSelectd.value);
+            var nextIndex = currentIndex < folderSelectd.options.length - 1 ? currentIndex + 1 : folderSelectd.options.length - 1;
+            folderSelectd.value = folderSelectd.options[nextIndex].value;
+            var selectedFolder = folderSelectd.value;
+            var folderPath = "./" + selectedFolder;
+            var totalImages = folderImages[selectedFolder];
+            loadImagesFromFolder(folderPath, totalImages);
+            history.pushState(null, '', '?REZE=' + selectedFolder);
+            localStorage.setItem('selectedFolder', selectedFolder);
+        });
+
+        // Function to get URL parameters
+        function getUrlParam(parameter, defaultValue) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameter) || defaultValue;
+        }
+
+        // Get the folder from URL parameter or use the default value
+        var initialFolder = getUrlParam('REZE', folderSelectd.value);
+        folderSelectd.value = initialFolder;
+        var initialFolderPath = "./" + initialFolder;
+        var initialTotalImages = folderImages[initialFolder];
+        loadImagesFromFolder(initialFolderPath, initialTotalImages);
+	</script>
 <script>
         var imageContainer = document.getElementById('imageContainer');
         var folderSelect = document.getElementById('folderSelect');
