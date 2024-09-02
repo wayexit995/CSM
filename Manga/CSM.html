@@ -10,7 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient( 90deg, #6b3434, #6b3434);
+			background-color: rgb(153, 122, 112);
+            
         }
         main {
 			max-width: 100%;
@@ -31,7 +32,7 @@
 @media (prefers-color-scheme: dark) {
 
     main {
-            background: linear-gradient( 90deg, #6b3434, #6b3434);
+            
         }
 }
 
@@ -136,6 +137,12 @@ h2 {
     cursor: pointer;
   }
   
+  @media (max-width:992px) {
+      .c-eStXTg {
+		display: none;
+	  }
+    }
+  
 .c-eStXTg {
                     position: fixed;
                     top: 0;
@@ -169,6 +176,23 @@ h2 {
 			</p>
 		</div>
 	</div>
+	
+	 <div class="" style="
+    display: flex;
+    align-items: baseline;
+    padding: 20px;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 0 auto;
+">
+        <label for="colorPicker" style="
+    color: white;
+    font-family: monospace;
+    margin-right: 10px;
+">Pick Background Color:</label>
+        <input type="color" id="colorPicker" name="background-color" value="#ffffff" style="block-size: 22px;">
+    </div>
+	
 	<br/>
 	<div id="imageContainer">
 	</div>
@@ -203,6 +227,16 @@ h2 {
 	</br>
     </section>
 </main>
+<script>
+        // Get the color picker and body elements
+        const colorPicker = document.getElementById('colorPicker');
+        const body = document.body;
+
+        // Set the initial background color from the color picker value
+        colorPicker.addEventListener('input', function() {
+            body.style.backgroundColor = colorPicker.value;
+        });
+    </script>
 <script>
         // Function to scroll to the top of the page instantly
         function scrollToTop() {
