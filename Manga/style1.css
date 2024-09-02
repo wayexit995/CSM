@@ -69,6 +69,7 @@ section {
 .chapter-list p {
 	margin-top: 15px;
 	text-align: center;
+	font-family: monospace;
 }
 
 .chapter-list a:hover {
