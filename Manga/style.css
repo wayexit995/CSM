@@ -80,6 +80,7 @@ section {
 .volume-list p {
 	margin-top: 15px;
 	text-align: center;
+	font-family: monospace;
 }
 
 .volume-list a:hover {
