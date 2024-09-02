@@ -232,9 +232,21 @@ h2 {
         const colorPicker = document.getElementById('colorPicker');
         const body = document.body;
 
-        // Set the initial background color from the color picker value
-        colorPicker.addEventListener('input', function() {
+        // Check if a color is already stored in localStorage
+        const savedColor = localStorage.getItem('bgColor');
+        if (savedColor) {
+            body.style.backgroundColor = savedColor;
+            colorPicker.value = savedColor;
+        } else {
+            colorPicker.value = "#68607b"; // Set default to grey if no color is saved
             body.style.backgroundColor = colorPicker.value;
+        }
+
+        // Change the background color and save it to localStorage when a new color is picked
+        colorPicker.addEventListener('input', function() {
+            const selectedColor = colorPicker.value;
+            body.style.backgroundColor = selectedColor;
+            localStorage.setItem('bgColor', selectedColor);
         });
     </script>
 <script>
