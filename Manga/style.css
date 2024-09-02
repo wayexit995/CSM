@@ -105,7 +105,11 @@ footer a {
   color: white;
 }
 
-
+@media (max-width:992px) {
+      .c-eStXTg {
+		display: none;
+	  }
+    }
 
 .c-eStXTg {
                     position: absolute;
