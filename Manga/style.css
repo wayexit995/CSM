@@ -86,7 +86,7 @@ section {
 
 .volume-list a:hover {
 	#transform: scale(1.1);
-	background-color: rgba(160, 55, 200, 0.5); /* add 50% transparency */
+	background-color: rgb(205 205 205 / 50%);
 	
 	color: white;
 }
