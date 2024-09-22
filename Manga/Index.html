@@ -190,7 +190,49 @@
       </div>
       <div class="bg-elements">
         <div class="dots" style="will-change: transform; transform: translate3d(0px, 23.9966%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-        </div><img src="./statics/62ab0d6ce96d2803b07e005b_circle-white.svg" alt="" class="circle-small" style="will-change: transform; transform: translate3d(0px, 7.99904%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"><img src="./statics/62ab0d6ce96d2803b07e005b_circle-white.svg" alt="" class="circle-big">
+        </div>
+		
+		<picture id="responsive-image">
+  <!-- For small screens (less than 600px wide) -->
+  <source srcset="./statics/62ab0d6ce96d2803b07e005b_circle-white.svg" media="(max-width: 600px)">
+  
+  <!-- Default image for larger screens, but JS will change this randomly -->
+  <img id="random-image" src="" alt="" class="circle-small" 
+       style="opacity: 0.6; will-change: transform; 
+              transform: translate3d(0px, 7.99904%, 0px) scale3d(1, 1, 1) 
+                         rotateX(0deg) rotateY(0deg) rotateZ(0deg) 
+                         skew(0deg, 0deg); 
+              transform-style: preserve-3d;">
+</picture>
+<script>
+  // Array of random images for larger screens
+  const randomImages = [
+    './img/Makima.png',
+    './img/Makima1.png',
+	'./img/Power.png',
+    './img/Together.png'
+  ];
+
+  // Function to set a random image from the array
+  function setRandomImage() {
+    const randomIndex = Math.floor(Math.random() * randomImages.length);
+    document.getElementById('random-image').src = randomImages[randomIndex];
+  }
+
+  // Event listener for screen resizing or page loading
+  function checkScreenSize() {
+    if (window.matchMedia("(min-width: 601px)").matches) {
+      setRandomImage();
+    }
+  }
+
+  // Initial check when page loads
+  window.addEventListener('load', checkScreenSize);
+
+  // Check on resize as well
+  window.addEventListener('resize', checkScreenSize);
+</script>
+
       </div><img src="./statics/62ab0d6ce96d2872757e0060_wave-bottom-haze.svg" alt="" class="wave-bottom">
     </div>
 	
