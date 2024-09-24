@@ -7,7 +7,13 @@ header {
 	align-items: center;
 	font-family: monospace;
 }
+body {
+  overflow: auto;
+}
 
+::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and newer browsers */
+}
 nav ul {
 	list-style: none;
 	margin: 0;
