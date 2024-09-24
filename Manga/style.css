@@ -9,7 +9,13 @@ body {
 	background-position: center;
 	font-family: monospace;
 }
+body {
+  overflow: auto;
+}
 
+::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and newer browsers */
+}
 header {
 	background-color: rgba(51, 51, 51, 0.8);
 	color: #fff;
