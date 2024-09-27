@@ -1,13 +1,14 @@
-# [Click me to visit](https://wayexit995.github.io/CSM/Manga/Index.html)
+# [Read Chainsaw Man (Colored Edition)](https://wayexit995.github.io/CSM/Manga/Index.html)
 
-# [Chainsaw Man](https://wayexit995.github.io/CSM/Manga/Index.html)
+Explore the beautifully colored version of *Chainsaw Man*, covering volumes 1 to 11. 
 
-> Read the colored version of Chainsaw Man manga volumes 1 to 11.
+- **Read all volumes**: Relive the story in full color!
 
-> [Visit](https://wayexit995.github.io/CSM/Manga/Index.html)
+[Click here to start reading!](https://wayexit995.github.io/CSM/Manga/Index.html)
 
+---
 
+![Reze and Denji](https://raw.githubusercontent.com/wayexit995/CSM/main/Manga/img/370852667_122098044134026433_3259430490755712967_n.jpg)
+*Reze and Denji from Chainsaw Man*
 
-![Reze_Denji](https://raw.githubusercontent.com/wayexit995/CSM/main/Manga/img/370852667_122098044134026433_3259430490755712967_n.jpg)
-
-
+> **Pro Tip**: Bookmark this page so you can easily access the latest updates!
