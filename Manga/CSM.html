@@ -160,6 +160,15 @@ h2 {
                     background-image: url(./noise-light.png);
                     z-index: -1;
                 }
+				
+				.bw {
+  filter: grayscale(100%);
+}
+
+.saturation {
+  filter: saturate(115%); /* Increases saturation by 15% */
+}
+
     </style>
 </head>
 <body>
@@ -197,7 +206,16 @@ h2 {
 ">Pick Background Color:</label>
         <input type="color" id="colorPicker" name="background-color" value="#ffffff" style="block-size: 22px;">
     </div>
-	
+	<label>
+  <input type="checkbox" id="bwToggle">
+  Black & White
+</label>
+
+<label>
+  <input type="checkbox" id="saturationToggle">
+  Saturation Boost (15%)
+</label>
+
 	<br/>
 	<div id="imageContainer">
 	</div>
@@ -253,6 +271,58 @@ h2 {
             body.style.backgroundColor = selectedColor;
             localStorage.setItem('bgColor', selectedColor);
         });
+		
+		
+		
+		
+		
+		
+		const bwToggle = document.getElementById('bwToggle');
+const saturationToggle = document.getElementById('saturationToggle');
+
+// Function to apply black & white filter to all images
+function applyBWFilter() {
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if (bwToggle.checked) {
+      img.classList.add('bw');
+    } else {
+      img.classList.remove('bw');
+    }
+  });
+}
+
+// Function to apply saturation boost to all images
+function applySaturationFilter() {
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if (saturationToggle.checked) {
+      img.classList.add('saturation');
+    } else {
+      img.classList.remove('saturation');
+    }
+  });
+}
+
+// Save the state of each checkbox when changed and apply corresponding filters
+bwToggle.addEventListener('change', () => {
+  localStorage.setItem('bwToggle', bwToggle.checked);
+  applyBWFilter();
+});
+
+saturationToggle.addEventListener('change', () => {
+  localStorage.setItem('saturationToggle', saturationToggle.checked);
+  applySaturationFilter();
+});
+
+// Load the saved states from localStorage on page load
+window.addEventListener('load', () => {
+  bwToggle.checked = localStorage.getItem('bwToggle') === 'true';
+  saturationToggle.checked = localStorage.getItem('saturationToggle') === 'true';
+  applyBWFilter();
+  applySaturationFilter();
+});
+
     </script>
 <script>
         // Function to scroll to the top of the page instantly
