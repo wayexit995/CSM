@@ -123,7 +123,7 @@ footer a {
 	padding: 10px;
 	border-radius: 0px;
 	display: block;
-	transform: translateY(-4px) translateX(-4px);
+	transform: translateY(0px) translateX(0px);
 	box-shadow: 7px 7px 0px 2px #00000040;
 	transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
