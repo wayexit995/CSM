@@ -123,13 +123,13 @@ footer a {
 	padding: 10px;
 	border-radius: 0px;
 	display: block;
-	transform: translateY(-4px) ;
+	transform: translateY(-4px) translateX(-4px);
 	box-shadow: 7px 7px 0px 2px #00000040;
 	transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .volume-list a:hover {
-	transform: translateY(0px) ;
+	transform: translateY(0px) translateX(0px);
 	#transform: scale(1.1);
 	background-color: rgb(205 205 205 / 50%);
 	box-shadow: 4px 4px 0px 2px #00000040;
