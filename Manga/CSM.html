@@ -332,7 +332,7 @@ window.addEventListener('load', () => {
     </script>
 	<script>
 	var imageContainer = document.getElementById('imageContainer');
-        var folderSelectd = document.getElementById('folderSelectd');
+        var folderSelect = document.getElementById('folderSelect');
         var prevBtnd = document.getElementById('prevBtnd');
         var nextBtnd = document.getElementById('nextBtnd');
 
@@ -444,7 +444,7 @@ window.addEventListener('load', () => {
                 var option = document.createElement('option');
                 option.value = folder;
                 option.text = "Chapter " + folder.slice(8);
-                folderSelectd.appendChild(option);
+                folderSelect.appendChild(option);
             }
         }
 
@@ -468,7 +468,7 @@ window.addEventListener('load', () => {
 
 
 
-        folderSelectd.addEventListener('change', function () {
+        folderSelect.addEventListener('change', function () {
             var selectedFolder = this.value;
             var folderPath = "./" + selectedFolder;
             var totalImages = folderImages[selectedFolder];
@@ -480,10 +480,10 @@ window.addEventListener('load', () => {
         });
 
         prevBtnd.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelectd.options).findIndex(option => option.value === folderSelectd.value);
+            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
             var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
-            folderSelectd.value = folderSelectd.options[prevIndex].value;
-            var selectedFolder = folderSelectd.value;
+            folderSelect.value = folderSelect.options[prevIndex].value;
+            var selectedFolder = folderSelect.value;
             var folderPath = "./" + selectedFolder;
             var totalImages = folderImages[selectedFolder];
             loadImagesFromFolder(folderPath, totalImages);
@@ -492,10 +492,10 @@ window.addEventListener('load', () => {
         });
 
         nextBtnd.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelectd.options).findIndex(option => option.value === folderSelectd.value);
-            var nextIndex = currentIndex < folderSelectd.options.length - 1 ? currentIndex + 1 : folderSelectd.options.length - 1;
-            folderSelectd.value = folderSelectd.options[nextIndex].value;
-            var selectedFolder = folderSelectd.value;
+            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
+            var nextIndex = currentIndex < folderSelect.options.length - 1 ? currentIndex + 1 : folderSelect.options.length - 1;
+            folderSelect.value = folderSelect.options[nextIndex].value;
+            var selectedFolder = folderSelect.value;
             var folderPath = "./" + selectedFolder;
             var totalImages = folderImages[selectedFolder];
             loadImagesFromFolder(folderPath, totalImages);
@@ -510,8 +510,8 @@ window.addEventListener('load', () => {
         }
 
         // Get the folder from URL parameter or use the default value
-        var initialFolder = getUrlParam('REZE', folderSelectd.value);
-        folderSelectd.value = initialFolder;
+        var initialFolder = getUrlParam('REZE', folderSelect.value);
+        folderSelect.value = initialFolder;
         var initialFolderPath = "./" + initialFolder;
         var initialTotalImages = folderImages[initialFolder];
         loadImagesFromFolder(initialFolderPath, initialTotalImages);
