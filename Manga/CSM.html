@@ -387,28 +387,26 @@ window.addEventListener('load', () => {
         });
 
         prevBtnd.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
-            var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
-            folderSelect.value = folderSelect.options[prevIndex].value;
-            var selectedFolder = folderSelect.value;
-            var folderPath = "./" + selectedFolder;
-            var totalImages = folderImages[selectedFolder];
-            loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?REZE=' + selectedFolder);
-            localStorage.setItem('selectedFolder', selectedFolder);
-        });
+    var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
+    var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    folderSelect.value = folderSelect.options[prevIndex].value;
 
-        nextBtnd.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
-            var nextIndex = currentIndex < folderSelect.options.length - 1 ? currentIndex + 1 : folderSelect.options.length - 1;
-            folderSelect.value = folderSelect.options[nextIndex].value;
-            var selectedFolder = folderSelect.value;
-            var folderPath = "./" + selectedFolder;
-            var totalImages = folderImages[selectedFolder];
-            loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?REZE=' + selectedFolder);
-            localStorage.setItem('selectedFolder', selectedFolder);
-        });
+    var selectedFolder = folderSelect.value;
+    // Added reload logic
+    history.replaceState(null, '', '?REZE=' + selectedFolder);
+    window.location.reload(); // Refresh the page to load new folder's images
+});
+
+nextBtnd.addEventListener('click', function () {
+    var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
+    var nextIndex = currentIndex < folderSelect.options.length - 1 ? currentIndex + 1 : folderSelect.options.length - 1;
+    folderSelect.value = folderSelect.options[nextIndex].value;
+
+    var selectedFolder = folderSelect.value;
+    // Added reload logic
+    history.replaceState(null, '', '?REZE=' + selectedFolder);
+    window.location.reload(); // Refresh the page to load new folder's images
+});
 
         // Function to get URL parameters
         function getUrlParam(parameter, defaultValue) {
@@ -573,28 +571,26 @@ window.addEventListener('load', () => {
         });
 
         prevBtn.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
-            var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
-            folderSelect.value = folderSelect.options[prevIndex].value;
-            var selectedFolder = folderSelect.value;
-            var folderPath = "./" + selectedFolder;
-            var totalImages = folderImages[selectedFolder];
-            loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?REZE=' + selectedFolder);
-            localStorage.setItem('selectedFolder', selectedFolder);
-        });
+    var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
+    var prevIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+    folderSelect.value = folderSelect.options[prevIndex].value;
 
-        nextBtn.addEventListener('click', function () {
-            var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
-            var nextIndex = currentIndex < folderSelect.options.length - 1 ? currentIndex + 1 : folderSelect.options.length - 1;
-            folderSelect.value = folderSelect.options[nextIndex].value;
-            var selectedFolder = folderSelect.value;
-            var folderPath = "./" + selectedFolder;
-            var totalImages = folderImages[selectedFolder];
-            loadImagesFromFolder(folderPath, totalImages);
-            history.pushState(null, '', '?REZE=' + selectedFolder);
-            localStorage.setItem('selectedFolder', selectedFolder);
-        });
+    var selectedFolder = folderSelect.value;
+    // Added reload logic
+    history.replaceState(null, '', '?REZE=' + selectedFolder);
+    window.location.reload(); // Refresh the page to load new folder's images
+});
+
+nextBtn.addEventListener('click', function () {
+    var currentIndex = Array.from(folderSelect.options).findIndex(option => option.value === folderSelect.value);
+    var nextIndex = currentIndex < folderSelect.options.length - 1 ? currentIndex + 1 : folderSelect.options.length - 1;
+    folderSelect.value = folderSelect.options[nextIndex].value;
+
+    var selectedFolder = folderSelect.value;
+    // Added reload logic
+    history.replaceState(null, '', '?REZE=' + selectedFolder);
+    window.location.reload(); // Refresh the page to load new folder's images
+});
 
         // Function to get URL parameters
         function getUrlParam(parameter, defaultValue) {
