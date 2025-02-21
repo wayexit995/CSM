@@ -262,6 +262,29 @@ h2 {
 	    
 	    <p><script type="text/javascript" src="https://freehitcounters.org/count/gsi9"></script><br>
  <a href='http://www.freevisitorcounters.com'>more on freevisitorcounters.com</a> <script type='text/javascript' src='https://whomania.com/ctr?id=5fe2e4ce186089c61d21e1047b3dfc389abf71fd'></script></p>
+	    <script>
+		    function removeExactLine(inputCode) {
+  const lineToRemove = `<img src="//stats.symptoma.com/matomo.php?idsite=1&amp;rec=1&amp;action_name=Chatbot&amp;url=https://www.symptoma.com/chatbot&amp;urlref=" alt="" style="border: 0px;">`;
+
+  // Use a regular expression to remove the exact line
+  const updatedCode = inputCode.replace(new RegExp(lineToRemove, 'g'), '');
+
+  return updatedCode;
+}
+
+// Example usage
+const inputCode = `
+  <div>
+    <p>Some other code here</p>
+    <img src="//stats.symptoma.com/matomo.php?idsite=1&amp;rec=1&amp;action_name=Chatbot&amp;url=https://www.symptoma.com/chatbot&amp;urlref=" alt="" style="border: 0px;">
+    <p>More code here</p>
+  </div>
+`;
+
+const updatedCode = removeExactLine(inputCode);
+console.log(updatedCode);
+
+	    </script>
     </section>
 </main>
 <script>
